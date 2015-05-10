@@ -19,8 +19,14 @@ KERNEL_DIR=$PWD
 ZIMAGE=$KERNEL_DIR/arch/arm/boot/zImage
 BUILD_START=$(date +"%s")
 # Color Code Script
-red='\033[0;31m'
-yellow='\033[0;33m'
+Black='\e[0;30m'        # Black
+Red='\e[0;31m'          # Red
+Green='\e[0;32m'        # Green
+Yellow='\e[0;33m'       # Yellow
+Blue='\e[0;34m'         # Blue
+Purple='\e[0;35m'       # Purple
+Cyan='\e[0;36m'         # Cyan
+White='\e[0;37m'        # White
 # Tweakable Options Below
 export ARCH=arm
 export SUBARCH=arm
@@ -29,14 +35,14 @@ export KBUILD_BUILD_HOST="Perilous-Beast"
 # Compilation Scripts Are Below
 compile_kernel ()
 {
-echo -e "***********************************************"
-echo -e "         Compiling BlackBox kernel             "
-echo -e "***********************************************"
+echo -e "$White***********************************************"
+echo "         Compiling BlackBox kernel             "
+echo -e "***********************************************$nocol"
 make $codename$_defconfig
 make
 if ! [ -a $ZIMAGE ];
 then
-echo -e "$red Kernel Compilation failed! Fix the errors! $nocol"
+echo -e "$Red Kernel Compilation failed! Fix the errors! $nocol"
 exit 1
 fi
 }
@@ -52,4 +58,4 @@ compile_kernel
 esac
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
-echo -e "$yellow Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seconds.$nocol"
+echo -e "$Yellow Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seconds.$nocol"
