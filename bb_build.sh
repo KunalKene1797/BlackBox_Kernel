@@ -1,5 +1,5 @@
 #
-# Copyright © 2015, Varun Chitre "kunalkene1797" <kunalkene1797@gmail.com>
+# Copyright © 2015, Kunal Kene "kunalkene1797" <kunalkene1797@gmail.com>
 #
 # Custom build script for BlackBox Kernel's
 #
